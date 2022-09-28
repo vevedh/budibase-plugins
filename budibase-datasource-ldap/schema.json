@@ -1,0 +1,57 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://github.com/saostad/ldap-ts-client#readme",
+    "description":
+      "LDAP Client to connect your Active Directory LDAP Server.",
+      "friendlyName": "AD Ldap",
+      "type": "Non-Relational",
+    "datasource": {
+      "url": {
+        "type": "string",
+        "required": false,
+        "default": "ldap://domain.com"
+      },
+      "bindDN": {
+        "type": "string",
+        "required": true
+      },
+      "secret": {
+        "type": "password",
+        "required": true
+      },
+      "baseDN": {
+        "type": "string",
+        "required": false
+      }
+
+    },
+    "query": {
+      "create": {
+        "type": "json"
+      },
+      "read": {
+        "type": "fields",
+        "fields": {
+          "filtre": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "update": {
+        "type": "json"
+      },
+      "delete": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}
